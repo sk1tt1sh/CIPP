@@ -156,5 +156,33 @@
         "label": "Enable Integration"
       }
     ]
+  },
+  {
+    "name": "IronScales Integration",
+    "type": "IronScales",
+    "cat": "AntiPhishing",
+    "forceSyncButton": false,
+    "helpText": "IronScales Integration allows for ticket creation, phishing management etc.",
+    "SettingOptions": [
+      {
+        "type": "input",
+        "fieldtype": "input",
+        "name": "IronScales.ApiHost",
+        "label": "IronScales API host address",
+        "placeholder": "https://appapi.ironscales.com/appapi"
+      },
+      {
+        "type": "input",
+        "fieldtype": "password",
+        "name": "IronScales.APIKey",
+        "label": "IronScales API Client key",
+        "placeholder": "Enter your IronScales API Client key"
+      },
+      {
+        "type": "checkbox",
+        "name": "IronScales.Enabled",
+        "label": "Enable Integration"
+      }
+    ]
   }
 ]

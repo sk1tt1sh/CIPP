@@ -708,24 +708,6 @@ const _nav = [
   },
   {
     component: CNavTitle,
-    name: 'MSP Integrations',
-  },
-  {
-    component: CNavGroup,
-    section: 'PSA',
-    name: 'PSA',
-    to: '/msptools/psa',
-    icon: <FontAwesomeIcon icon={faChartBar} className="nav-icon" />,
-    items: [
-      {
-        component: CNavItem,
-        name: 'PSA Tickets',
-        to: '/msptools/psa-tickets',
-      },
-    ],
-  },
-  {
-    component: CNavTitle,
     name: 'Settings',
   },
   {
