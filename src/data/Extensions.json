@@ -19,6 +19,69 @@
     ]
   },
   {
+    "name": "Autotask Integration",
+    "type": "Autotask",
+    "cat": "AutotaskPSA",
+    "forceSyncButton": true,
+    "helpText": "Autotask Integration allows for ticket creation etc.",
+    "SettingOptions": [
+      {
+        "type": "input",
+        "fieldtype": "input",
+        "name": "Autotask.APIUser",
+        "label": "API User",
+        "placeholder": "user@domain.com"
+      },
+      {
+        "type": "input",
+        "fieldtype": "password",
+        "name": "Autotask.APIKey",
+        "label": "API User password",
+        "placeholder": "Enter your API password"
+      },
+      {
+        "type": "input",
+        "fieldtype": "input",
+        "name": "Autotask.APIIntegrationCode",
+        "label": "API Integration Code",
+        "placeholder": "user@domain.com"
+      },
+      {
+        "type": "checkbox",
+        "name": "Autotask.Enabled",
+        "label": "Enable Integration"
+      }
+    ]
+  },
+  {
+    "name": "IronScales Integration",
+    "type": "IronScales",
+    "cat": "AntiPhishing",
+    "forceSyncButton": false,
+    "helpText": "IronScales Integration allows for ticket creation, phishing management etc.",
+    "SettingOptions": [
+      {
+        "type": "input",
+        "fieldtype": "input",
+        "name": "IronScales.ApiHost",
+        "label": "IronScales API host address",
+        "placeholder": "https://appapi.ironscales.com/appapi"
+      },
+      {
+        "type": "input",
+        "fieldtype": "password",
+        "name": "IronScales.APIKey",
+        "label": "IronScales API Client key",
+        "placeholder": "Enter your IronScales API Client key"
+      },
+      {
+        "type": "checkbox",
+        "name": "IronScales.Enabled",
+        "label": "Enable Integration"
+      }
+    ]
+  },
+  {
     "name": "Gradient Integration",
     "type": "Gradient",
     "cat": "Billing & Invoicing",
@@ -153,34 +216,6 @@
       {
         "type": "checkbox",
         "name": "NinjaOne.Enabled",
-        "label": "Enable Integration"
-      }
-    ]
-  },
-  {
-    "name": "IronScales Integration",
-    "type": "IronScales",
-    "cat": "AntiPhishing",
-    "forceSyncButton": false,
-    "helpText": "IronScales Integration allows for ticket creation, phishing management etc.",
-    "SettingOptions": [
-      {
-        "type": "input",
-        "fieldtype": "input",
-        "name": "IronScales.ApiHost",
-        "label": "IronScales API host address",
-        "placeholder": "https://appapi.ironscales.com/appapi"
-      },
-      {
-        "type": "input",
-        "fieldtype": "password",
-        "name": "IronScales.APIKey",
-        "label": "IronScales API Client key",
-        "placeholder": "Enter your IronScales API Client key"
-      },
-      {
-        "type": "checkbox",
-        "name": "IronScales.Enabled",
         "label": "Enable Integration"
       }
     ]
