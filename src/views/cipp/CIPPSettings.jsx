@@ -1589,6 +1589,7 @@ const DNSSettings = () => {
     </>
   )
 }
+
 const ExtensionsTab = () => {
   const [listBackend, listBackendResult] = useLazyGenericGetRequestQuery()
   const inputRef = useRef(null)
