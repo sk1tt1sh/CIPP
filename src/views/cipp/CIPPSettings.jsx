@@ -1769,8 +1769,10 @@ const MappingsTab = () => {
   const [listNinjaFieldsBackend, listBackendNinjaFieldsResult] = useLazyGenericGetRequestQuery()
 
   const [listAutotaskBackend, listBackendAutotaskResult = []] = useLazyGenericGetRequestQuery()
-  const [listAutotaskManagedBackend, listBackendAutotaskManagedResult = []] =
+  const [listAutotaskManagedBackend, listBackendAutotaskManagedResult] =
     useLazyGenericGetRequestQuery()
+
+  const [listIronScalesBackend, listBackendIronScalesResult = []] = useLazyGenericGetRequestQuery()
 
   const [setHaloExtensionconfig, extensionHaloConfigResult = []] = useLazyGenericPostRequestQuery()
 
@@ -1784,6 +1786,9 @@ const MappingsTab = () => {
   const [setAutotaskExtensionconfig, extensionAutotaskConfigResult] =
     useLazyGenericPostRequestQuery()
   const [setAutotaskManagedExtensionconfig, extensionAutotaskManagedConfigResult] =
+    useLazyGenericPostRequestQuery()
+
+  const [setIronScalesExtensionconfig, extensionIronScalesConfigResult] =
     useLazyGenericPostRequestQuery()
 
   const onHaloSubmit = (values) => {
@@ -1824,6 +1829,14 @@ const MappingsTab = () => {
       values: { mappings: values },
     })
   }
+
+  const onIronScalesSubmit = (values) => {
+    setIronScalesExtensionconfig({
+      path: 'api/ExecExtensionMapping?AddMapping=IronScales',
+      values: { mappings: values },
+    })
+  }
+
   const onAutotaskManagedSubmit = (values) => {
     setAutotaskManagedExtensionconfig({
       path: 'api/ExecExtensionMapping?AddMapping=AutotaskManaged',
@@ -1843,6 +1856,8 @@ const MappingsTab = () => {
         listAutotaskBackend({ path: 'api/ExecExtensionMapping?List=Autotask' })}
       {listBackendAutotaskManagedResult.isUninitialized &&
         listAutotaskManagedBackend({ path: 'api/ExecExtensionMapping?List=AutotaskManaged' })}
+      {listBackendIronScalesResult.isUninitialized &&
+        listIronScalesBackend({ path: 'api/ExecExtensionMapping?List=IronScales' })}
       <>
         <CCard className="mb-3">
           <CCardHeader>
@@ -1898,6 +1913,58 @@ const MappingsTab = () => {
         </CCard>
         <CCard className="mb-3">
           <CCardHeader>
+            <CCardTitle>IronScales Mapping Table</CCardTitle>
+          </CCardHeader>
+          <CCardBody>
+            {listBackendIronScalesResult.isFetching ? (
+              <CSpinner color="primary" />
+            ) : (
+              <Form
+                onSubmit={onIronScalesSubmit}
+                initialValues={listBackendIronScalesResult.data?.Mappings}
+                render={({ handleSubmit, submitting, values }) => {
+                  return (
+                    <CForm onSubmit={handleSubmit}>
+                      <CCardText>
+                        Use the table below to map your client to the correct PSA client
+                        {listBackendIronScalesResult.isSuccess &&
+                          listBackendIronScalesResult.data.Tenants?.map((tenant) => (
+                            <RFFSelectSearch
+                              key={tenant.displayName}
+                              name={tenant.customerId}
+                              label={tenant.displayName}
+                              values={listBackendIronScalesResult.data.IronScalesCompanies}
+                              placeholder="Select a client"
+                            />
+                          ))}
+                      </CCardText>
+                      <CCol className="me-2">
+                        <CButton className="me-2" type="submit">
+                          {extensionIronScalesConfigResult.isFetching && (
+                            <FontAwesomeIcon icon={faCircleNotch} spin className="me-2" size="1x" />
+                          )}
+                          Set Mappings
+                        </CButton>
+                        {(extensionIronScalesConfigResult.isSuccess ||
+                          extensionIronScalesConfigResult.isError) && (
+                          <CCallout
+                            color={extensionIronScalesConfigResult.isSuccess ? 'success' : 'danger'}
+                          >
+                            {extensionIronScalesConfigResult.isSuccess
+                              ? extensionIronScalesConfigResult.data.Results
+                              : 'Error'}
+                          </CCallout>
+                        )}
+                      </CCol>
+                    </CForm>
+                  )
+                }}
+              />
+            )}
+          </CCardBody>
+        </CCard>
+        <CCard className="mb-3">
+          <CCardHeader>
             <CCardTitle>Autotask Managed Customers</CCardTitle>
           </CCardHeader>
           <CCardBody>
@@ -1914,7 +1981,7 @@ const MappingsTab = () => {
                         {listBackendAutotaskManagedResult.isSuccess &&
                           listBackendAutotaskManagedResult.data.ManagedCusts?.map((at) => (
                             <RFFCFormSwitch
-                              key={at.name}
+                              key={at.aid}
                               name={at.name}
                               label={at.name}
                               initialValue={at.value}
