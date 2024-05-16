@@ -622,7 +622,7 @@ export function SettingsExtensionMappings() {
             />
           )}
         </CippAccordionItem>
-        <CippAccordionItem
+        {/* <CippAccordionItem
           title={'NinjaOne Organization Mapping'}
           titleType="big"
           isFetching={listBackendNinjaOrgsResult.isFetching}
@@ -826,7 +826,7 @@ export function SettingsExtensionMappings() {
                               return !Object.keys(listBackendHaloResult.data?.Mappings).includes(
                                 tenant.customerId,
                               )
-                            }).map((tenant) => ({
+                            })?.map((tenant) => ({
                               name: tenant.displayName,
                               value: tenant.customerId,
                             }))}
@@ -848,7 +848,7 @@ export function SettingsExtensionMappings() {
                                   return value.value
                                 })
                                 .includes(client.value)
-                            }).map((client) => ({
+                            })?.map((client) => ({
                               name: client.name,
                               value: client.value,
                             }))}
@@ -862,7 +862,7 @@ export function SettingsExtensionMappings() {
                             if (
                               mappingValue.value !== undefined &&
                               Object.values(haloMappingsArray)
-                                .map((item) => item.haloId)
+                                ?.map((item) => item.haloId)
                                 .includes(mappingValue.value) === false
                             ) {
                               //set the new mapping in the array
@@ -945,12 +945,12 @@ export function SettingsExtensionMappings() {
                         Field
                       </p>
                       {listBackendNinjaFieldsResult.isSuccess &&
-                        listBackendNinjaFieldsResult.data.CIPPOrgFields.map((CIPPOrgFields) => (
+                        listBackendNinjaFieldsResult.data?.CIPPOrgFields.map((CIPPOrgFields) => (
                           <RFFSelectSearch
                             key={CIPPOrgFields.InternalName}
                             name={CIPPOrgFields.InternalName}
                             label={CIPPOrgFields.Type + ' - ' + CIPPOrgFields.Description}
-                            values={listBackendNinjaFieldsResult.data.NinjaOrgFields.filter(
+                            values={listBackendNinjaFieldsResult.data?.NinjaOrgFields.filter(
                               (item) => item.type === CIPPOrgFields.Type || item.type === 'unset',
                             )}
                             placeholder="Select a Field"
@@ -964,12 +964,12 @@ export function SettingsExtensionMappings() {
                         Field
                       </p>
                       {listBackendNinjaFieldsResult.isSuccess &&
-                        listBackendNinjaFieldsResult.data.CIPPNodeFields.map((CIPPNodeFields) => (
+                        listBackendNinjaFieldsResult.data?.CIPPNodeFields.map((CIPPNodeFields) => (
                           <RFFSelectSearch
                             key={CIPPNodeFields.InternalName}
                             name={CIPPNodeFields.InternalName}
                             label={CIPPNodeFields.Type + ' - ' + CIPPNodeFields.Description}
-                            values={listBackendNinjaFieldsResult.data.NinjaNodeFields.filter(
+                            values={listBackendNinjaFieldsResult.data?.NinjaNodeFields.filter(
                               (item) => item.type === CIPPNodeFields.Type || item.type === 'unset',
                             )}
                             placeholder="Select a Field"
@@ -998,7 +998,7 @@ export function SettingsExtensionMappings() {
               }}
             />
           )}
-        </CippAccordionItem>
+        </CippAccordionItem> */}
       </CAccordion>
     </CRow>
   )
