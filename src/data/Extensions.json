@@ -21,6 +21,174 @@
     "mappingRequired": false
   },
   {
+    "name": "Autotask Integration",
+    "type": "Autotask",
+    "cat": "AutotaskPSA",
+    "forceSyncButton": true,
+    "mappingRequired": true,
+    "fieldMapping": true,
+    "helpText": "Autotask Integration allows for ticket creation etc.",
+    "SettingOptions": [
+      {
+        "type": "input",
+        "fieldtype": "input",
+        "name": "Autotask.APIUser",
+        "label": "API User",
+        "placeholder": "user@domain.com"
+      },
+      {
+        "type": "input",
+        "fieldtype": "password",
+        "name": "Autotask.APIKey",
+        "label": "API User password",
+        "placeholder": "Enter your API password"
+      },
+      {
+        "type": "input",
+        "fieldtype": "input",
+        "name": "Autotask.APIIntegrationCode",
+        "label": "API Integration Code",
+        "placeholder": "user@domain.com"
+      },
+      {
+        "type": "checkbox",
+        "name": "Autotask.Enabled",
+        "label": "Enable Integration"
+      }
+    ]
+  },
+  {
+    "name": "IronScales Integration",
+    "type": "IronScales",
+    "cat": "AntiPhishing",
+    "forceSyncButton": true,
+    "mappingRequired": true,
+    "fieldMapping": true,
+    "helpText": "IronScales Integration allows for ticket creation, phishing management etc.",
+    "SettingOptions": [
+      {
+        "type": "input",
+        "fieldtype": "input",
+        "name": "IronScales.ApiHost",
+        "label": "IronScales API host address",
+        "placeholder": "https://appapi.ironscales.com/appapi"
+      },
+      {
+        "type": "input",
+        "fieldtype": "password",
+        "name": "IronScales.APIKey",
+        "label": "IronScales API Client key",
+        "placeholder": "Enter your IronScales API Client key"
+      },
+      {
+        "type": "checkbox",
+        "name": "IronScales.Enabled",
+        "label": "Enable Integration"
+      }
+    ]
+  },
+  {
+    "name": "Hudu",
+    "type": "Hudu",
+    "cat": "Documentation",
+    "forceSyncButton": true,
+    "helpText": "This integration allows you to populate custom asset layouts with Tenant information, monitor device compliance state, document other items and generate relationships inside Hudu.",
+    "SettingOptions": [
+      {
+        "type": "input",
+        "fieldtype": "input",
+        "name": "Hudu.BaseUrl",
+        "label": "Please enter your Hudu URL",
+        "placeholder": "https://yourcompany.huducloud.com"
+      },
+      {
+        "type": "input",
+        "fieldtype": "password",
+        "name": "Hudu.APIKey",
+        "label": "Hudu API Key",
+        "placeholder": "Enter your Hudu API Key"
+      },
+      {
+        "type": "checkbox",
+        "name": "Hudu.CreateMissingUsers",
+        "label": "Create missing users in Hudu"
+      },
+      {
+        "type": "checkbox",
+        "name": "Hudu.CreateMissingDevices",
+        "label": "Create missing devices in Hudu"
+      },
+      {
+        "type": "checkbox",
+        "name": "Hudu.Enabled",
+        "label": "Enable Integration"
+      }
+    ],
+    "mappingRequired": true,
+    "fieldMapping": true,
+    "showSyncButton": true
+  },
+  {
+    "name": "PasswordPusher",
+    "type": "PWPush",
+    "cat": "Passwords",
+    "forceSyncButton": false,
+    "helpText": "This integration allows you to generate password links instead of plain text passwords. Visit https://pwpush.com/ or https://github.com/pglombardo/PasswordPusher for more information.",
+    "SettingOptions": [
+      {
+        "type": "checkbox",
+        "name": "PWPush.Enabled",
+        "label": "Replace generated passwords with PWPush links"
+      },
+      {
+        "type": "input",
+        "fieldtype": "text",
+        "name": "PWPush.BaseUrl",
+        "label": "PWPush URL",
+        "placeholder": "Enter your PWPush URL. (default: https://pwpush.com)"
+      },
+      {
+        "type": "input",
+        "fieldtype": "text",
+        "name": "PWPush.EmailAddress",
+        "label": "PWPush email address",
+        "placeholder": "Enter your email address for PWPush. (optional)"
+      },
+      {
+        "type": "input",
+        "fieldtype": "password",
+        "name": "PWPush.APIKey",
+        "label": "PWPush API Key",
+        "placeholder": "Enter your PWPush API Key. (optional)"
+      },
+      {
+        "type": "checkbox",
+        "name": "PWPush.RetrievalStep",
+        "label": "Click to retrieve password (recommended)"
+      },
+      {
+        "type": "input",
+        "fieldtype": "number",
+        "name": "PWPush.ExpireAfterDays",
+        "label": "Expiration in Days",
+        "placeholder": "Expiration time in days. (optional)"
+      },
+      {
+        "type": "input",
+        "fieldtype": "number",
+        "name": "PWPush.ExpireAfterViews",
+        "label": "Expiration after views",
+        "placeholder": "Expiration after views. (optional)"
+      },
+      {
+        "type": "checkbox",
+        "name": "PWPush.DeletableByViewer",
+        "label": "Allow deletion of passwords"
+      }
+    ],
+    "mappingRequired": false
+  },
+  {
     "name": "Gradient",
     "type": "Gradient",
     "cat": "Billing & Invoicing",
@@ -164,169 +332,5 @@
     "fieldMapping": true,
     "autoMapSyncApi": true,
     "showSyncButton": true
-  },
-  {
-    "name": "Hudu",
-    "type": "Hudu",
-    "cat": "Documentation",
-    "forceSyncButton": true,
-    "helpText": "This integration allows you to populate custom asset layouts with Tenant information, monitor device compliance state, document other items and generate relationships inside Hudu.",
-    "SettingOptions": [
-      {
-        "type": "input",
-        "fieldtype": "input",
-        "name": "Hudu.BaseUrl",
-        "label": "Please enter your Hudu URL",
-        "placeholder": "https://yourcompany.huducloud.com"
-      },
-      {
-        "type": "input",
-        "fieldtype": "password",
-        "name": "Hudu.APIKey",
-        "label": "Hudu API Key",
-        "placeholder": "Enter your Hudu API Key"
-      },
-      {
-        "type": "checkbox",
-        "name": "Hudu.CreateMissingUsers",
-        "label": "Create missing users in Hudu"
-      },
-      {
-        "type": "checkbox",
-        "name": "Hudu.CreateMissingDevices",
-        "label": "Create missing devices in Hudu"
-      },
-      {
-        "type": "checkbox",
-        "name": "Hudu.Enabled",
-        "label": "Enable Integration"
-      }
-    ],
-    "mappingRequired": true,
-    "fieldMapping": true,
-    "showSyncButton": true
-  },
-  {
-    "name": "PasswordPusher",
-    "type": "PWPush",
-    "cat": "Passwords",
-    "forceSyncButton": false,
-    "helpText": "This integration allows you to generate password links instead of plain text passwords. Visit https://pwpush.com/ or https://github.com/pglombardo/PasswordPusher for more information.",
-    "SettingOptions": [
-      {
-        "type": "checkbox",
-        "name": "PWPush.Enabled",
-        "label": "Replace generated passwords with PWPush links"
-      },
-      {
-        "type": "input",
-        "fieldtype": "text",
-        "name": "PWPush.BaseUrl",
-        "label": "PWPush URL",
-        "placeholder": "Enter your PWPush URL. (default: https://pwpush.com)"
-      },
-      {
-        "type": "input",
-        "fieldtype": "text",
-        "name": "PWPush.EmailAddress",
-        "label": "PWPush email address",
-        "placeholder": "Enter your email address for PWPush. (optional)"
-      },
-      {
-        "type": "input",
-        "fieldtype": "password",
-        "name": "PWPush.APIKey",
-        "label": "PWPush API Key",
-        "placeholder": "Enter your PWPush API Key. (optional)"
-      },
-      {
-        "type": "checkbox",
-        "name": "PWPush.RetrievalStep",
-        "label": "Click to retrieve password (recommended)"
-      },
-      {
-        "type": "input",
-        "fieldtype": "number",
-        "name": "PWPush.ExpireAfterDays",
-        "label": "Expiration in Days",
-        "placeholder": "Expiration time in days. (optional)"
-      },
-      {
-        "type": "input",
-        "fieldtype": "number",
-        "name": "PWPush.ExpireAfterViews",
-        "label": "Expiration after views",
-        "placeholder": "Expiration after views. (optional)"
-      },
-      {
-        "type": "checkbox",
-        "name": "PWPush.DeletableByViewer",
-        "label": "Allow deletion of passwords"
-      }
-    ],
-    "mappingRequired": false
-  },
-  {
-    "name": "Autotask Integration",
-    "type": "Autotask",
-    "cat": "AutotaskPSA",
-    "forceSyncButton": true,
-    "helpText": "Autotask Integration allows for ticket creation etc.",
-    "SettingOptions": [
-      {
-        "type": "input",
-        "fieldtype": "input",
-        "name": "Autotask.APIUser",
-        "label": "API User",
-        "placeholder": "user@domain.com"
-      },
-      {
-        "type": "input",
-        "fieldtype": "password",
-        "name": "Autotask.APIKey",
-        "label": "API User password",
-        "placeholder": "Enter your API password"
-      },
-      {
-        "type": "input",
-        "fieldtype": "input",
-        "name": "Autotask.APIIntegrationCode",
-        "label": "API Integration Code",
-        "placeholder": "user@domain.com"
-      },
-      {
-        "type": "checkbox",
-        "name": "Autotask.Enabled",
-        "label": "Enable Integration"
-      }
-    ]
-  },
-  {
-    "name": "IronScales Integration",
-    "type": "IronScales",
-    "cat": "AntiPhishing",
-    "forceSyncButton": true,
-    "helpText": "IronScales Integration allows for ticket creation, phishing management etc.",
-    "SettingOptions": [
-      {
-        "type": "input",
-        "fieldtype": "input",
-        "name": "IronScales.ApiHost",
-        "label": "IronScales API host address",
-        "placeholder": "https://appapi.ironscales.com/appapi"
-      },
-      {
-        "type": "input",
-        "fieldtype": "password",
-        "name": "IronScales.APIKey",
-        "label": "IronScales API Client key",
-        "placeholder": "Enter your IronScales API Client key"
-      },
-      {
-        "type": "checkbox",
-        "name": "IronScales.Enabled",
-        "label": "Enable Integration"
-      }
-    ]
   }
 ]
