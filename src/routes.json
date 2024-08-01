@@ -777,6 +777,12 @@
     "allowedRoles": ["admin", "editor", "readonly"]
   },
   {
+    "path": "/email/tools/message-viewer",
+    "name": "Message Viewer",
+    "component": "views/email-exchange/tools/MessageViewer",
+    "allowedRoles": ["admin", "editor", "readonly"]
+  },
+  {
     "path": "/email/spamfilter/add-template",
     "name": "Add Spamfilter Template",
     "component": "views/email-exchange/spamfilter/AddSpamfilterTemplate",
@@ -890,9 +896,27 @@
     "allowedRoles": ["admin", "editor", "readonly"]
   },
   {
-    "name": "Phishing Policies",
-    "path": "/email/reports/phishing-policies",
-    "component": "views/email-exchange/reports/PhishingPoliciesList",
+    "path": "/email/reports/antiphishing-filters",
+    "name": "Anti Phishing Filters",
+    "component": "views/email-exchange/reports/AntiPhishingFilters",
+    "allowedRoles": ["admin", "editor", "readonly"]
+  },
+  {
+    "path": "/email/reports/malware-filters",
+    "name": "Malware Filters",
+    "component": "views/email-exchange/reports/MalwareFilters",
+    "allowedRoles": ["admin", "editor", "readonly"]
+  },
+  {
+    "path": "/email/reports/safelinks-filters",
+    "name": "Safe Links Filters",
+    "component": "views/email-exchange/reports/SafeLinksFilters",
+    "allowedRoles": ["admin", "editor", "readonly"]
+  },
+  {
+    "path": "/email/reports/safeattachments-filters",
+    "name": "Safe Attachment Filters",
+    "component": "views/email-exchange/reports/SafeAttachmentsFilters",
     "allowedRoles": ["admin", "editor", "readonly"]
   },
   {
@@ -981,9 +1005,15 @@
     "allowedRoles": ["admin"]
   },
   {
-    "path": "/tenant/administration/gdap-invite",
+    "path": "/tenant/administration/gdap-invite-wizard",
     "name": "GDAP Invite Wizard",
     "component": "views/tenant/administration/GDAPInviteWizard",
+    "allowedRoles": ["admin"]
+  },
+  {
+    "path": "/tenant/administration/gdap-invites",
+    "name": "GDAP Invites",
+    "component": "views/tenant/administration/ListGDAPInvites",
     "allowedRoles": ["admin"]
   },
   {
