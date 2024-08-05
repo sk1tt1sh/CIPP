@@ -2,6 +2,7 @@ import React from 'react'
  export const importsMap = {
   "/home": React.lazy(() => import('./views/home/Home')), 
   "/cipp/logs": React.lazy(() => import('./views/cipp/Logs')), 
+  "/cipp/template-library": React.lazy(() => import('./views/cipp/TemplateLibrary')), 
   "/cipp/scheduler": React.lazy(() => import('./views/cipp/Scheduler')), 
   "/cipp/statistics": React.lazy(() => import('./views/cipp/Statistics')), 
   "/cipp/404": React.lazy(() => import('./views/pages/page404/Page404')), 
@@ -42,7 +43,8 @@ import React from 'react'
   "/tenant/administration/domains": React.lazy(() => import('./views/tenant/administration/Domains')), 
   "/tenant/administration/alertswizard": React.lazy(() => import('./views/tenant/administration/AlertWizard')), 
   "/tenant/administration/alertrules": React.lazy(() => import('./views/tenant/administration/AlertRules')), 
-  "/tenant/administration/alertsqueue": React.lazy(() => import('./views/tenant/administration/ListAlertsQueue')), 
+  "/tenant/administration/alert-configuration": React.lazy(() => import('./views/tenant/administration/ListAlertsQueue')), 
+  "/tenant/administration/audit-logs": React.lazy(() => import('./views/tenant/administration/ListAuditLogs')), 
   "/tenant/administration/graph-explorer": React.lazy(() => import('./views/tenant/administration/GraphExplorer')), 
   "/tenant/administration/service-health": React.lazy(() => import('./views/tenant/administration/ServiceHealth')), 
   "/tenant/administration/enterprise-apps": React.lazy(() => import('./views/tenant/administration/ListEnterpriseApps')), 
