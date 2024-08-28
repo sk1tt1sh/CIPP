@@ -362,6 +362,10 @@ const Users = (row) => {
 
   const columns = [
     {
+      name: 'Actions',
+      cell: Offcanvas,
+    },
+    {
       name: 'Tenant',
       selector: (row) => row['Tenant'],
       sortable: true,
@@ -432,10 +436,6 @@ const Users = (row) => {
       selector: (row) => row['id'],
       omit: true,
       exportSelector: 'id',
-    },
-    {
-      name: 'Actions',
-      cell: Offcanvas,
     },
   ]
   const tenant = useSelector((state) => state.app.currentTenant)
