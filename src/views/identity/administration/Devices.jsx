@@ -61,6 +61,11 @@ const DevicesList = () => {
   }
   const columns = [
     {
+      name: 'Actions',
+      cell: Offcanvas,
+      maxWidth: '20px',
+    },
+    {
       name: 'Tenant',
       selector: (row) => row['Tenant'],
       sortable: true,
@@ -132,11 +137,6 @@ const DevicesList = () => {
       name: 'Profile Type',
       sortable: true,
       exportSelector: 'profileType',
-    },
-    {
-      name: 'Actions',
-      cell: Offcanvas,
-      maxWidth: '20px',
     },
   ]
   useEffect(() => {

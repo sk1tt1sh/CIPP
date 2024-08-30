@@ -209,6 +209,11 @@ const MailboxList = () => {
   //TODO: Add CellBoolean
   const columns = [
     {
+      name: 'Actions',
+      cell: Offcanvas,
+      maxWidth: '150px',
+    },
+    {
       selector: (row) => row['UPN'],
       name: 'User Prinicipal Name',
       sortable: true,
@@ -252,11 +257,6 @@ const MailboxList = () => {
       exportSelector: 'AdditionalEmailAddresses',
       sortable: true,
       cell: cellGenericFormatter(),
-    },
-    {
-      name: 'Actions',
-      cell: Offcanvas,
-      maxWidth: '150px',
     },
   ]
 
