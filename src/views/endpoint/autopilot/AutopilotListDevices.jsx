@@ -63,6 +63,20 @@ const OffCanvas = (row, index, column) => {
             modalMessage: 'Select the user to assign',
           },
           {
+            label: 'Set Group Tag',
+            color: 'info',
+            modal: true,
+            modalType: 'POST',
+            modalBody: {
+              user: row.userPrincipalName,
+              TenantFilter: tenant.defaultDomainName,
+              groupTag: row.message,
+            },
+            modalUrl: `/api/ExecSetGroupTag`,
+            modalInput: true,
+            modalMessage: 'Enter a Group Tag and press continue.',
+          },
+          {
             label: 'Delete Device',
             color: 'danger',
             modal: true,
@@ -78,6 +92,7 @@ const OffCanvas = (row, index, column) => {
     </>
   )
 }
+
 const AutopilotListDevices = () => {
   const [ExecuteGetRequest, getResults] = useLazyGenericGetRequestQuery()
   const tenant = useSelector((state) => state.app.currentTenant)
