@@ -71,6 +71,7 @@ const OffCanvas = (row, index, column) => {
               user: row.userPrincipalName,
               TenantFilter: tenant.defaultDomainName,
               groupTag: row.message,
+              Device: row.id,
             },
             modalUrl: `/api/ExecSetGroupTag`,
             modalInput: true,
