@@ -80,12 +80,17 @@ const Actions = (row, rowIndex, formatExtraData) => {
         visible={ocVisible}
         id={row.id}
         hideFunction={() => setOCVisible(false)}
-      />
+        />
     </>
   )
 }
 
 const columns = [
+  {
+    name: 'Actions',
+    cell: Actions,
+    maxWidth: '80px',
+  },
   {
     selector: (row) => row['displayName'],
     name: 'Name',
@@ -134,11 +139,6 @@ const columns = [
     name: 'id',
     omit: true,
     exportSelector: 'id',
-  },
-  {
-    name: 'Actions',
-    cell: Actions,
-    maxWidth: '80px',
   },
 ]
 
