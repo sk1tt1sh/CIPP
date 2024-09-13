@@ -80,7 +80,7 @@ const Actions = (row, rowIndex, formatExtraData) => {
         visible={ocVisible}
         id={row.id}
         hideFunction={() => setOCVisible(false)}
-        />
+      />
     </>
   )
 }
