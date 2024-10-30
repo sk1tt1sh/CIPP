@@ -82,8 +82,7 @@ const OffCanvas = (row, index, column) => {
               },
             },
             modalUrl: `/api/ExecSetGroupTag`,
-            modalInput: true,
-            modalMessage: 'Enter a Group Tag and press continue.',
+            modalMessage: 'Select a Group Tag and press continue.',
           },
           {
             label: 'Delete Device',
