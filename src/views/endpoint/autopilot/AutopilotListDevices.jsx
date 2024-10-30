@@ -73,6 +73,14 @@ const OffCanvas = (row, index, column) => {
               groupTag: row.message,
               Device: row.id,
             },
+            modalDropdown: {
+              url: '/AutopilotGroupTags.json',
+              labelField: 'userPrincipalName',
+              valueField: 'id',
+              addedField: {
+                groupName: 'groupTag',
+              },
+            },
             modalUrl: `/api/ExecSetGroupTag`,
             modalInput: true,
             modalMessage: 'Enter a Group Tag and press continue.',
