@@ -1,10 +1,34 @@
 [
-  {"value":"ManagedPC","label":"GroupTag"},
-  {"value":"Administrator","label":"GroupTag"},
-  {"value":"Standard","label":"GroupTag"},
-  {"value":"MES","label":"GroupTag"},
-  {"value":"PAL-Shared","label":"GroupTag"},
-  {"value":"PAL","label":"GroupTag"},
-  {"value":"BLY","label":"GroupTag"},
-  {"value":"BLY-Shared","label":"GroupTag"}
+  {
+      "value": "ManagedPC",
+      "label": "ManagedPC"
+  },
+  {
+      "value": "Administrator",
+      "label": "Administrator-AHG"
+  },
+  {
+      "value": "Standard",
+      "label": "Standard-AHG"
+  },
+  {
+      "value": "MES",
+      "label": "MES-Mountain Elite"
+  },
+  {
+      "value": "PAL-Shared",
+      "label": "Palisade Shared"
+  },
+  {
+      "value": "PAL",
+      "label": "Palisade"
+  },
+  {
+      "value": "BLY",
+      "label": "Bailey"
+  },
+  {
+      "value": "BLY-Shared",
+      "label": "Bailey Shared"
+  }
 ]
