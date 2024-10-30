@@ -13,7 +13,7 @@ import { CippActionsOffcanvas, ModalService } from 'src/components/utilities'
 import { useLazyGenericGetRequestQuery } from 'src/store/api/app'
 import { CellTip } from 'src/components/tables'
 import { TitleButton } from 'src/components/buttons'
-
+import GroupTags from 'src/data/AutopilotGroupTags.json'
 const OffCanvas = (row, index, column) => {
   const tenant = useSelector((state) => state.app.currentTenant)
 
@@ -75,10 +75,10 @@ const OffCanvas = (row, index, column) => {
             },
             modalDropdown: {
               url: '/AutopilotGroupTags.json',
-              labelField: 'userPrincipalName',
-              valueField: 'id',
+              labelField: 'label',
+              valueField: 'value',
               addedField: {
-                groupName: 'groupTag',
+                groupTag: 'value',
               },
             },
             modalUrl: `/api/ExecSetGroupTag`,
