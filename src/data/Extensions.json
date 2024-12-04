@@ -100,8 +100,8 @@
         "type": "input",
         "fieldtype": "input",
         "name": "NCentral.ApiHost",
-        "label": "NCentral API host address",
-        "placeholder": "https://ncod20.n-able.com"
+        "label": "NCentral API host address (DO NOT INCLUDE HTTPS)",
+        "placeholder": "ncod20.n-able.com"
       },
       {
         "type": "input",
