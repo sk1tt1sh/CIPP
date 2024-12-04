@@ -88,6 +88,36 @@
     ]
   },
   {
+    "name": "N-Central Integration",
+    "type": "N-Central",
+    "cat": "RMM",
+    "forceSyncButton": true,
+    "mappingRequired": false,
+    "fieldMapping": false,
+    "helpText": "N-Central RMM integration enables the scheduled job to update Autotask asset items.",
+    "SettingOptions": [
+      {
+        "type": "input",
+        "fieldtype": "input",
+        "name": "NCentral.ApiHost",
+        "label": "NCentral API host address",
+        "placeholder": "https://ncod20.n-able.com"
+      },
+      {
+        "type": "input",
+        "fieldtype": "password",
+        "name": "NCentral.APIKey",
+        "label": "NCentral API Client key",
+        "placeholder": "Enter your NCentral API Client key"
+      },
+      {
+        "type": "checkbox",
+        "name": "NCentral.Enabled",
+        "label": "Enable Integration"
+      }
+    ]
+  },
+  {
     "name": "Hudu",
     "type": "Hudu",
     "cat": "Documentation",
@@ -127,66 +157,6 @@
     "mappingRequired": true,
     "fieldMapping": true,
     "showSyncButton": true
-  },
-  {
-    "name": "PasswordPusher",
-    "type": "PWPush",
-    "cat": "Passwords",
-    "forceSyncButton": false,
-    "helpText": "This integration allows you to generate password links instead of plain text passwords. Visit https://pwpush.com/ or https://github.com/pglombardo/PasswordPusher for more information.",
-    "SettingOptions": [
-      {
-        "type": "checkbox",
-        "name": "PWPush.Enabled",
-        "label": "Replace generated passwords with PWPush links"
-      },
-      {
-        "type": "input",
-        "fieldtype": "text",
-        "name": "PWPush.BaseUrl",
-        "label": "PWPush URL",
-        "placeholder": "Enter your PWPush URL. (default: https://pwpush.com)"
-      },
-      {
-        "type": "input",
-        "fieldtype": "text",
-        "name": "PWPush.EmailAddress",
-        "label": "PWPush email address",
-        "placeholder": "Enter your email address for PWPush. (optional)"
-      },
-      {
-        "type": "input",
-        "fieldtype": "password",
-        "name": "PWPush.APIKey",
-        "label": "PWPush API Key",
-        "placeholder": "Enter your PWPush API Key. (optional)"
-      },
-      {
-        "type": "checkbox",
-        "name": "PWPush.RetrievalStep",
-        "label": "Click to retrieve password (recommended)"
-      },
-      {
-        "type": "input",
-        "fieldtype": "number",
-        "name": "PWPush.ExpireAfterDays",
-        "label": "Expiration in Days",
-        "placeholder": "Expiration time in days. (optional)"
-      },
-      {
-        "type": "input",
-        "fieldtype": "number",
-        "name": "PWPush.ExpireAfterViews",
-        "label": "Expiration after views",
-        "placeholder": "Expiration after views. (optional)"
-      },
-      {
-        "type": "checkbox",
-        "name": "PWPush.DeletableByViewer",
-        "label": "Allow deletion of passwords"
-      }
-    ],
-    "mappingRequired": false
   },
   {
     "name": "Gradient",
